@@ -1,0 +1,18 @@
+hr.page_divider {
+  border-top: 5px solid green;
+}
+
+/* visited link */
+a:visited {
+    color: lightblue;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.with-top-margin {
+  margin-top: 25;
+}
