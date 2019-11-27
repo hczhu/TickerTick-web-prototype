@@ -77,12 +77,25 @@ function getUrlParams(url) {
 
 const should_show_all = ('all' in getUrlParams());
 
+function addUserTerms(q) {
+  if (should_show_all) {
+    return q;
+  }
+  or_part = "(or " + "ck:" + USER + " v:"  + USER + " k:" + USER + " dk:" + USER + ")";
+  or_part = "(diff " + or_part + " sv:" + USER + ")";
+  return "(diff " + q + " " + or_part + ")";
+}
+
 function getQueryFeedUrl() {
   params_dict = getUrlParams();
   params = [];
   for (k in params_dict) {
     if (k != "user") {
-      params.push(k + "=" + params_dict[k]);
+      value = params_dict[k];
+      if (k == "q") {
+        value = addUserTerms(value);
+      }
+      params.push(k + "=" + value);
     }
   }
   params.push('user=' + USER)
@@ -98,6 +111,7 @@ function getFeedUrlFromForms(lang, relevance, ticker, ignore_q = true) {
       q = params_dict["q"];
     }
   }
+  q = addUserTerms(q);
   var url = SEARCH_URL + "q=" + q  + "&lang=" + lang;
   if ("all" in params_dict) {
     url += "&all=1";
@@ -127,7 +141,8 @@ function getStockFeedUrl() {
     return null;
   }
   ticker = keys.length > 0 ? keys[0] : "fb";
-  url = SEARCH_URL + "user=" + USER + "&q=tk:" + ticker;
+  q = addUserTerms("tk:" + ticker);
+  url = SEARCH_URL + "user=" + USER + "&q=" + q;
   return url;
 }
 
