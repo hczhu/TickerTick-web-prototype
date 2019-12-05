@@ -165,6 +165,9 @@ function fetchStories(url, last = 0) {
   .then(data => {
     // This is an array
     var stories = data.stories;
+    if (!stories) {
+      return [];
+    }
     console.log("Fetched " + stories.length + " stories from " + url);
     for (var i in stories) {
       stories[i].id_str = stories[i].id;

@@ -436,7 +436,7 @@ var FeedNav = function (_React$Component5) {
             React.createElement(
               'h3',
               null,
-              'Ticker Tick'
+              'TickerTick'
             ),
             React.createElement(
               'h6',
@@ -445,7 +445,7 @@ var FeedNav = function (_React$Component5) {
               React.createElement(
                 'a',
                 { target: '_blank', href: 'https://github.com/hczhu/SNFaaS' },
-                'stock news feed as-a-service'
+                'powered by: TickerTick API'
               )
             )
           ),

@@ -299,9 +299,9 @@ class FeedNav extends React.Component {
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="">
         <h3>
-            Ticker Tick 
+            TickerTick 
           </h3> 
-          <h6> <a target="_blank" href="https://github.com/hczhu/SNFaaS">stock news feed as-a-service</a></h6>
+          <h6> <a target="_blank" href="https://github.com/hczhu/SNFaaS">powered by: TickerTick API</a></h6>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
