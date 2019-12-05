@@ -89,7 +89,7 @@ class StoryCard extends React.Component {
         <Card.Body>
           <Card.Title>
           <Image src={storyInJson.favicon_url} rounded width="32" /> 
-              <a target="_blank" href={storyInJson.url}
+              <a target="_blank" href={storyInJson.url} id={storyInJson.id_str}
               dangerouslySetInnerHTML={{__html: storyInJson.title}}
               onClick={ this.anchorClickCallback } /> 
           </Card.Title>

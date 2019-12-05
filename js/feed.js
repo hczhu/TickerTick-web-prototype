@@ -140,7 +140,7 @@ var StoryCard = function (_React$Component2) {
             Card.Title,
             null,
             React.createElement(Image, { src: storyInJson.favicon_url, rounded: true, width: '32' }),
-            React.createElement('a', { target: '_blank', href: storyInJson.url,
+            React.createElement('a', { target: '_blank', href: storyInJson.url, id: storyInJson.id_str,
               dangerouslySetInnerHTML: { __html: storyInJson.title },
               onClick: this.anchorClickCallback })
           ),

@@ -168,8 +168,9 @@ function fetchStories(url, last = 0) {
     console.log("Fetched " + stories.length + " stories from " + url);
     for (var i in stories) {
       stories[i].id_str = stories[i].id;
-      stories[i].days_ago = Math.round((Date.now() - (new Date(stories[i].time))) / 1000 / 3600 / 24)
-      console.log("Added id_str and days_ago: " + stories[i])
+      stories[i].days_ago = Math.round((Date.now() - (new Date(stories[i].time))) / 1000 / 3600 / 24);
+      stories[i].date = new Date(stories[i].time).toLocaleString();
+      console.log("Added id_str and days_ago: " + stories[i]);
     }
     return stories;
   })
