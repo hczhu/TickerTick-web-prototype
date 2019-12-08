@@ -29,7 +29,7 @@ copyToS3() {
     exit 1
     ;;
   esac
-  for bucket in w.tickertick.com www.tickertick.com tickertick.com; do
+  for bucket in w.tickertick.com www.tickertick.com; do
     aws s3 cp ${mini_file} s3://${bucket}/${s3_dest}
     if [ "${file_basenmae}" = "feed.html" ]; then
       aws s3 cp ${mini_file} s3://${bucket}/index.html
